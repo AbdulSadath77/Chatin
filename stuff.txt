@@ -1,0 +1,328 @@
+      // home: const MyHomePage(title: 'Home'),
+
+
+// class MyHomePage extends StatefulWidget {
+//   const MyHomePage({super.key, required this.title});
+//
+//   final String title;
+//
+//   // @override
+//   // State<MyHomePage> createState() => _MyHomePageState();
+// }
+
+// class _MyHomePageState extends State<MyHomePage> {
+//   int _counter = 0;
+//
+//   void _incrementCounter() {
+//     setState(() {
+//       _counter++;
+//     });
+//   }
+
+Scaffold(
+      appBar: AppBar(
+        // TRY THIS: Try changing the color here to a specific color (to
+        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
+        // change color while the other colors stay the same.
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        title: Text(widget.title),
+      ),
+      body: Center(
+        // Center is a layout widget. It takes a single child and positions it
+        // in the middle of the parent.
+        child: Column(
+          // Column is also a layout widget. It takes a list of children and
+          // arranges them vertically. By default, it sizes itself to fit its
+          // children horizontally, and tries to be as tall as its parent.
+          //
+          // Column has various properties to control how it sizes itself and
+          // how it positions its children. Here we use mainAxisAlignment to
+          // center the children vertically; the main axis here is the vertical
+          // axis because Columns are vertical (the cross axis would be
+          // horizontal).
+          //
+          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
+          // action in the IDE, or press "p" in the console), to see the
+          // wireframe for each widget.
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text(
+              'You have pushed the button this many times:',
+            ),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+
+
+
+theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+
+
+    class MyHomePage extends StatefulWidget {
+      const MyHomePage({super.key, required this.title});
+
+      final String title;
+
+      @override
+      State<MyHomePage> createState() => _MyHomePageState();
+    }
+
+    class _MyHomePageState extends State<MyHomePage> {
+      int _counter = 0;
+
+      void _incrementCounter() {
+        setState(() {
+          _counter++;
+        });
+      }
+
+      @override
+      Widget build(BuildContext context) {
+        return Scaffold();
+      }
+    }
+==================================
+// const SizedBox(height: 10),
+          //
+          // // Forgot Password Button
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 25),
+          //   child: Row(
+          //     mainAxisAlignment: MainAxisAlignment.end,
+          //     children: [
+          //       TextButton(
+          //           onPressed: () {},
+          //           child: Text(
+          //             'Forgot Password?',
+          //             style: TextStyle(
+          //               color: Colors.blue,
+          //             ),
+          //           )),
+          //     ],
+          //   ),
+          // ),
+
+          ================================
+          
+/**
+ * Column(
+            children: [
+              const SizedBox(height: 100),
+              const Text(
+                'Login',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(height: 20),
+              MyTextField(
+                controller: _emailController,
+                hintText: 'Email',
+                keyboardType: TextInputType.emailAddress,
+                obscureText: false,
+              ),
+              const SizedBox(height: 20),
+              MyTextField(
+                controller: _passwordController,
+                hintText: 'Password',
+                keyboardType: TextInputType.text,
+                obscureText: true,
+              ),
+              const SizedBox(height: 20),
+              MyButton(
+                text: 'Login',
+                onPressed: () => login(context),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Don\'t have an account?'),
+                  TextButton(
+                    onPressed: onPressed,
+                    child: const Text('Register'),
+                  ),
+                ],
+              ),
+            ],
+          ),
+ */
+
+ =======================
+
+ return Drawer(
+      backgroundColor: Theme.of(context).colorScheme.primary,
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            child: Center(
+              child: Column(children: [
+                // logo icon
+                Icon(
+                  Icons.message,
+                  size: 40,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
+                Text(
+                  'Chatin',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.secondary,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  ),
+                ),
+              ]),
+            ),
+          ),
+          ListTile(
+            title: const Text('Home'),
+            onTap: () {
+              Navigator.pushNamed(context, '/home');
+            },
+          ),
+          ListTile(
+            title: const Text('Profile'),
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+          ),
+          ListTile(
+            title: const Text('Settings'),
+            onTap: () {
+              Navigator.pushNamed(context, '/settings');
+            },
+          ),
+          ListTile(
+            title: const Text('Logout'),
+            onTap: () {
+              Navigator.pushNamed(context, '/logout');
+            },
+          ),
+        ],
+      ),
+    );
+
+    =======================================
+
+    SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // crossAxisAlignment: CrossAxisAlignment.stretch,
+                // mainAxisSize: MainAxisSize.max,
+                children: [
+                  // logo icon
+                  DrawerHeader(
+                      child: CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    child: Icon(
+                      Icons.message,
+                      size: 50,
+                      color: Theme.of(context).colorScheme.surface,
+                    ),
+                  )),
+
+                  // Home button
+                  ListTile(
+                    title: const Text('H O M E'),
+                    leading: Padding(
+                      padding: const EdgeInsets.only(left: 25.0),
+                      child: Icon(
+                        Icons.home,
+                        color: Theme.of(context).colorScheme.primary,
+                        size: 30,
+                      ),
+                    ),
+                    onTap: () {
+                      // Navigator.of(context).pushNamed('/home');
+                    },
+                  ),
+
+                  // Settings button
+                  ListTile(
+                    title: const Text('S E T T I N G S'),
+                    leading: Padding(
+                      padding: const EdgeInsets.only(left: 25.0),
+                      child: Icon(
+                        Icons.settings,
+                        color: Theme.of(context).colorScheme.primary,
+                        size: 30,
+                      ),
+                    ),
+                    onTap: () {
+                      // Navigator.of(context).pushNamed('/settings');
+                    },
+                  ),
+                  // Settings button
+                  ListTile(
+                    title: const Text('S E T T I N G S'),
+                    leading: Padding(
+                      padding: const EdgeInsets.only(left: 25.0),
+                      child: Icon(
+                        Icons.settings,
+                        color: Theme.of(context).colorScheme.primary,
+                        size: 30,
+                      ),
+                    ),
+                    onTap: () {
+                      // Navigator.of(context).pushNamed('/settings');
+                    },
+                  ),
+                  // Settings button
+                  ListTile(
+                    title: const Text('S E T T I N G S'),
+                    leading: Padding(
+                      padding: const EdgeInsets.only(left: 25.0),
+                      child: Icon(
+                        Icons.settings,
+                        color: Theme.of(context).colorScheme.primary,
+                        size: 30,
+                      ),
+                    ),
+                    onTap: () {
+                      // Navigator.of(context).pushNamed('/settings');
+                    },
+                  ),
+
+                  // Logout button
+                  ListTile(
+                    title: const Text('L O G O U T'),
+                    leading: Padding(
+                      padding: const EdgeInsets.only(left: 25.0),
+                      child: Icon(
+                        Icons.logout,
+                        color: Theme.of(context).colorScheme.primary,
+                        size: 30,
+                      ),
+                    ),
+                    onTap: () {
+                      // Navigator.of(context).pushNamed('/logout');
+                    },
+                  ),
+                ],
+              )),
+              
+
+              =================
+
+              // if there is something inside the textfield
+      // final String currentUserID = _authService.getCurrentUser()!.uid;
+      // final String currentUserEmail = _authService.getCurrentUser()!.email!;

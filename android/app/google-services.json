@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "262714957880",
+    "project_id": "chatin-bf510",
+    "storage_bucket": "chatin-bf510.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262714957880:android:bc873b1b5e43a948a346cd",
+        "android_client_info": {
+          "package_name": "com.example.chatin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHp9mggeGJnE6aXUesSPBkkRGLzVuZX7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
